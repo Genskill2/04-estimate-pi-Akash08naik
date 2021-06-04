@@ -39,5 +39,19 @@ int main(void) {
   }
 }
 
-
+float mc_pi(int iter){
+	int points_in_circle=0;
+	float x,y;
+  	float pi,distance;
+	for(int i=0;i<iter;i++){
+		x=frandom();
+		y=frandom();
+		distance=sqrt(pow(x,2)+pow(y,2));
+		if(distance<=1){
+			points_in_circle+=1;
+		}
+	}
+	pi=(float)points_in_circle/(float)iter;
+	return 4*pi;
+}
 
